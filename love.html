@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine ❤️</title>
 
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff8fa3, #ffb3c6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 35px;
+    border-radius: 25px;
+    max-width: 450px;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    font-size: 1.4em;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="us.jpg" alt="Us ❤️">
+
+    <h1>I knew it 😏❤️</h1>
+    <p>
+        Erin, every day with you is my favorite.  
+        Valentine’s is just an excuse.
+    </p>
+
+    <div class="countdown" id="countdown"></div>
+</div>
+
+<script>
+const valentine = new Date("February 14, 2026 00:00:00").getTime();
+
+setInterval(() => {
+    const now = new Date().getTime();
+    const distance = valentine - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("countdown").innerHTML =
+        `Countdown to Valentine’s Day 💕<br>${days} days ${hours} hours ${minutes} minutes`;
+}, 1000);
+</script>
+
+</body>
+</html>
